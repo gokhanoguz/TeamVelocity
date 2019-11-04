@@ -1,5 +1,6 @@
 package com.pgaa.teamvelocity.data.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -17,7 +18,7 @@ interface StaffDao {
     suspend fun deleteStaff(vararg staff: Staff)
 
     @Query("SELECT * from staff_table ORDER BY name ASC")
-    suspend fun getAllStaff(): List<Staff>
+    suspend fun getAllStaff(): LiveData<List<Staff>>
 
     @Query("SELECT * from staff_table WHERE name LIKE :name")
     suspend fun getStaffByName(name: String)
