@@ -15,7 +15,7 @@ interface StaffDao {
     suspend fun insert(staff: Staff)
 
     @Delete
-    suspend fun deleteStaff(vararg staff: Staff)
+    suspend fun deleteStaff(staff: Staff)
 
     @Query("SELECT * from staff_table ORDER BY name ASC")
     suspend fun getAllStaff(): LiveData<List<Staff>>

@@ -15,9 +15,9 @@ interface SprintDao {
     suspend fun insert(sprint: Sprint)
 
     @Delete
-    suspend fun deleteSprint(vararg sprint: Sprint)
+    suspend fun deleteSprint(sprint: Sprint)
 
-    @Query("SELECT * from sprint_table ORDER BY name ASC")
+    @Query("SELECT * from sprint_table ORDER BY name DESC")
     suspend fun getAllSprint(): LiveData<List<Sprint>>
 
     @Query("SELECT * from sprint_table WHERE name LIKE :name LIMIT 1")
