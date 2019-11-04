@@ -20,7 +20,10 @@ interface SprintDao {
     @Query("SELECT * from sprint_table ORDER BY name ASC")
     suspend fun getAllSprint(): LiveData<List<Sprint>>
 
-    @Query("SELECT * from sprint_table WHERE name LIKE :name")
-    suspend fun getSprintByName(name: String)
+    @Query("SELECT * from sprint_table WHERE name LIKE :name LIMIT 1")
+    suspend fun getSprintByName(name: String): LiveData<Sprint>
+
+    @Query("SELECT * from sprint_table WHERE quarter LIKE :quarter")
+    suspend fun getSprintfByQuarter(quarter: String): LiveData<List<Sprint>>
 
 }

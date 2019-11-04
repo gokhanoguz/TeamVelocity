@@ -20,7 +20,7 @@ interface StaffDao {
     @Query("SELECT * from staff_table ORDER BY name ASC")
     suspend fun getAllStaff(): LiveData<List<Staff>>
 
-    @Query("SELECT * from staff_table WHERE name LIKE :name")
+    @Query("SELECT * from staff_table WHERE name LIKE :name LIMIT 1")
     suspend fun getStaffByName(name: String)
 
 }
