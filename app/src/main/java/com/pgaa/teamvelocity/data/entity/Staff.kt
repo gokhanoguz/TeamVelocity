@@ -1,3 +1,8 @@
 package com.pgaa.teamvelocity.data.entity
 
-data class Staff(val name: String)
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "staff_table")
+data class Staff(@PrimaryKey @ColumnInfo(name = "name") val name: String, @ColumnInfo(name = "type") val type: String)
