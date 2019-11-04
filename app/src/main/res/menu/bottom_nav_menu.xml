@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_menu_sprint"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_sprint" />
+
+    <item
+        android:id="@+id/navigation_menu_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_dashboard" />
+
+    <item
+        android:id="@+id/navigation_menu_staff"
+        android:icon="@drawable/ic_group_black_24dp"
+        android:title="@string/title_staff" />
+
+</menu>
