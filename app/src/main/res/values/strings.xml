@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Team Velocity</string>
+    <string name="title_home">Home</string>
+    <string name="title_sprints">Sprints</string>
+    <string name="title_staff">Staff</string>
 </resources>
