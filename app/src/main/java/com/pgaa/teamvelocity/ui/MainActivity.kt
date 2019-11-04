@@ -1,7 +1,8 @@
-package com.pgaa.teamvelocity
+package com.pgaa.teamvelocity.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.pgaa.teamvelocity.R
 
 class MainActivity : AppCompatActivity() {
 
