@@ -14,13 +14,13 @@ import kotlinx.coroutines.launch
 class SprintViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: SprintRepository
-    lateinit var allSprints: LiveData<List<Sprint>>
+    var allSprints: MutableLiveData<List<Sprint>>? = null
 
     init {
         val sprinData = SprintDatabase.getDatabase(application).sprintDao()
         repository = SprintRepository(sprinData)
         viewModelScope.launch {
-            allSprints = repository.getAllSprints()
+            allSprints = MutableLiveData(repository.getAllSprints())
         }
     }
 

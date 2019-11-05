@@ -1,6 +1,5 @@
 package com.pgaa.teamvelocity.data.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -18,12 +17,12 @@ interface SprintDao {
     suspend fun deleteSprint(sprint: Sprint)
 
     @Query("SELECT * from sprint_table ORDER BY name DESC")
-    suspend fun getAllSprint(): LiveData<List<Sprint>>
+    suspend fun getAllSprint(): List<Sprint>
 
     @Query("SELECT * from sprint_table WHERE name LIKE :name LIMIT 1")
-    suspend fun getSprintByName(name: String): LiveData<Sprint>
+    suspend fun getSprintByName(name: String): Sprint
 
     @Query("SELECT * from sprint_table WHERE quarter LIKE :quarter")
-    suspend fun getSprintfByQuarter(quarter: String): LiveData<List<Sprint>>
+    suspend fun getSprintfByQuarter(quarter: String): List<Sprint>
 
 }

@@ -23,7 +23,7 @@ class SprintFragment : Fragment() {
             ViewModelProviders.of(this).get(SprintViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_sprint, container, false)
 
-        sprintViewModel.allSprints.observe(this, Observer {
+        sprintViewModel.allSprints?.observe(this, Observer {
             //TODO:
         })
         return root
