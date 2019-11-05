@@ -12,19 +12,19 @@ import com.pgaa.teamvelocity.R
 
 class SprintFragment : Fragment() {
 
-    private lateinit var homeViewModel: SprintViewModel
+    private lateinit var sprintViewModel: SprintViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
+        sprintViewModel =
             ViewModelProviders.of(this).get(SprintViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_sprint, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(this, Observer {
-            textView.text = it
+
+        sprintViewModel.allSprints.observe(this, Observer {
+            //TODO:
         })
         return root
     }
