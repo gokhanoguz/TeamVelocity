@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_sprint">
+    app:startDestination="@+id/navigation_dashboard">
 
-    <fragment
-        android:id="@+id/navigation_sprint"
-        android:name="com.pgaa.teamvelocity.ui.home.SprintFragment"
-        android:label="@string/title_sprint"
-        tools:layout="@layout/fragment_sprint" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.pgaa.teamvelocity.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_sprint"
+        android:name="com.pgaa.teamvelocity.ui.home.SprintFragment"
+        android:label="@string/title_sprint"
+        tools:layout="@layout/fragment_sprint" />
 
     <fragment
         android:id="@+id/navigation_calculation"

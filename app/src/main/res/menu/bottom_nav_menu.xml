@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_menu_sprint"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_sprint" />
-
-    <item
-        android:id="@+id/navigation_menu_dashboard"
+        android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_dashboard" />
 
     <item
-        android:id="@+id/navigation_menu_calculation"
-        android:icon="@drawable/ic_group_black_24dp"
+        android:id="@+id/navigation_sprint"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="@string/title_sprint" />
+
+    <item
+        android:id="@+id/navigation_calculation"
+        android:icon="@drawable/ic_transform_black_24dp"
         android:title="@string/title_calculation" />
 
 </menu>
