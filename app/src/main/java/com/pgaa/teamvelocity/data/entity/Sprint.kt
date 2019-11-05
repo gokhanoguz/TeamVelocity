@@ -8,8 +8,7 @@ import androidx.room.PrimaryKey
 data class Sprint(
     @PrimaryKey @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "quarter") val quarter: String,
-    @ColumnInfo(name = "events") val events: String,
-    @ColumnInfo(name = "staff_day_map") val staffDayMap: Map<String, Int>,
+    @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "story_points") val storyPoints: Int,
     @ColumnInfo(name = "ratio") val ratio: Double
 )

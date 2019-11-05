@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_menu_sprint,
                 R.id.navigation_menu_dashboard,
-                R.id.navigation_menu_staff
+                R.id.navigation_menu_calculation
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

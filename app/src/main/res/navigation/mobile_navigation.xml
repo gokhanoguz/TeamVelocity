@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_staff"
-        android:name="com.pgaa.teamvelocity.ui.staff.StaffFragment"
-        android:label="@string/title_staff"
-        tools:layout="@layout/fragment_staff" />
+        android:id="@+id/navigation_calculation"
+        android:name="com.pgaa.teamvelocity.ui.calculation.CalculationFragment"
+        android:label="@string/title_calculation"
+        tools:layout="@layout/fragment_calculation" />
 </navigation>

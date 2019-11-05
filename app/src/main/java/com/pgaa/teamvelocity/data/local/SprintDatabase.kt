@@ -5,14 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.pgaa.teamvelocity.data.dao.SprintDao
-import com.pgaa.teamvelocity.data.dao.StaffDao
 import com.pgaa.teamvelocity.data.entity.Sprint
-import com.pgaa.teamvelocity.data.entity.Staff
 
-@Database(entities = [Sprint::class, Staff::class], version = 1)
+@Database(entities = [Sprint::class], version = 1)
 abstract class SprintDatabase : RoomDatabase() {
-
-    abstract fun staffDao() : StaffDao
+    
     abstract fun sprintDao() : SprintDao
 
     companion object {

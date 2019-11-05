@@ -1,10 +1,10 @@
-package com.pgaa.teamvelocity.ui.staff
+package com.pgaa.teamvelocity.ui.calculation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class StaffViewModel : ViewModel() {
+class CalculationViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is notifications Fragment"

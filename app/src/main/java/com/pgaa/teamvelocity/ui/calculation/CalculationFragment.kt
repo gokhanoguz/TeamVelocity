@@ -1,4 +1,4 @@
-package com.pgaa.teamvelocity.ui.staff
+package com.pgaa.teamvelocity.ui.calculation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.pgaa.teamvelocity.R
 
-class StaffFragment : Fragment() {
+class CalculationFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: StaffViewModel
+    private lateinit var notificationsViewModel: CalculationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,9 +20,9 @@ class StaffFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         notificationsViewModel =
-            ViewModelProviders.of(this).get(StaffViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_staff, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
+            ViewModelProviders.of(this).get(CalculationViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_calculation, container, false)
+        val textView: TextView = root.findViewById(R.id.text_calculation)
         notificationsViewModel.text.observe(this, Observer {
             textView.text = it
         })

@@ -2,6 +2,6 @@
     <string name="app_name">Team Velocity</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_staff">Staff</string>
+    <string name="title_calculation">Calculation</string>
     <string name="title_sprint">Sprints</string>
 </resources>
