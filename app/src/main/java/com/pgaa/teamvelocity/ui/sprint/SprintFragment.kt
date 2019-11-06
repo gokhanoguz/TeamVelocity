@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pgaa.teamvelocity.R
 import com.pgaa.teamvelocity.data.entity.Sprint
 
-class SprintFragment : Fragment() {
+class SprintFragment : Fragment(), OnSprintInteractionListener {
 
     private lateinit var sprintViewModel: SprintViewModel
 
@@ -31,13 +31,23 @@ class SprintFragment : Fragment() {
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.sprint_recyclerview)
         activity?.let {
-            val adapter = SprintAdapter(it)
+            val adapter = SprintAdapter(it, this)
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(it)
             addSampleData(adapter)
         }
 
         return root
+    }
+
+    override fun onSprintInteraction(sprint: Sprint) {
+        val detailFragment = SprintDetailFragment.newInstance(sprint)
+        activity?.let {
+            it.supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, detailFragment)
+                .addToBackStack("detail_fragment")
+                .commit()
+        }
     }
 
     private fun addSampleData(adapter: SprintAdapter) {
