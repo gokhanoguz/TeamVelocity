@@ -25,7 +25,7 @@ class SprintAdapter internal constructor(context: Context) : RecyclerView.Adapte
         holder.sprintName.text = sprintList[position].name
     }
 
-    internal fun setSprintLust(sprintList: List<Sprint>) {
+    internal fun setSprintList(sprintList: List<Sprint>) {
         this.sprintList = sprintList
         notifyDataSetChanged()
     }

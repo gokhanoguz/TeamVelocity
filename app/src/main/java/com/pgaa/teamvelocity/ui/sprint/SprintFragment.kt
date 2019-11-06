@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pgaa.teamvelocity.R
+import com.pgaa.teamvelocity.data.entity.Sprint
 
 class SprintFragment : Fragment() {
 
@@ -30,10 +31,18 @@ class SprintFragment : Fragment() {
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.sprint_recyclerview)
         activity?.let {
-            recyclerView.adapter = SprintAdapter(it)
+            val adapter = SprintAdapter(it)
+            recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(it)
+            addSampleData(adapter)
         }
 
         return root
+    }
+
+    private fun addSampleData(adapter: SprintAdapter) {
+        var dummySprint = Sprint("dummy sprint", "4", "", 50, 1.75)
+        var dummySprint2 = Sprint("dummy sprint2", "4", "", 50, 1.75)
+        adapter.setSprintList(listOf(dummySprint, dummySprint2))
     }
 }
