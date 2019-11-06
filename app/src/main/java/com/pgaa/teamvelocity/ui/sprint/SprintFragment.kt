@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.pgaa.teamvelocity.R
 
 class SprintFragment : Fragment() {
@@ -25,6 +27,13 @@ class SprintFragment : Fragment() {
         sprintViewModel.allSprints?.observe(this, Observer {
             //TODO:
         })
+
+        val recyclerView = root.findViewById<RecyclerView>(R.id.sprint_recyclerview)
+        activity?.let {
+            recyclerView.adapter = SprintAdapter(it)
+            recyclerView.layoutManager = LinearLayoutManager(it)
+        }
+
         return root
     }
 }
