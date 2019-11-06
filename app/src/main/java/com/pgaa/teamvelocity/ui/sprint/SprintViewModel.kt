@@ -1,10 +1,8 @@
-package com.pgaa.teamvelocity.ui.home
+package com.pgaa.teamvelocity.ui.sprint
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pgaa.teamvelocity.data.entity.Sprint
 import com.pgaa.teamvelocity.data.local.SprintDatabase
