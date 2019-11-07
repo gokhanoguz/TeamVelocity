@@ -34,7 +34,7 @@ class SprintFragment : Fragment(), OnSprintInteractionListener {
             val adapter = SprintAdapter(activity, this)
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(activity)
-            sprintViewModel.allSprints?.observe(this, Observer { sprintList ->
+            sprintViewModel.allSprints.observe(this, Observer { sprintList ->
                 adapter.setSprintList(sprintList)
 
             })
@@ -43,17 +43,20 @@ class SprintFragment : Fragment(), OnSprintInteractionListener {
         return root
     }
 
-    override fun onSprintInteraction(sprint: Sprint) {
+    override fun onSprintClick(sprint: Sprint) {
         startSprintDetailFragment(sprint)
+    }
+
+    override fun onDeleteClick(sprint: Sprint) {
+        sprintViewModel.deleteSprint(sprint)
+        sprintViewModel.getAllSprint()
     }
 
     private fun startSprintDetailFragment(sprint: Sprint?) {
         val detailFragment = SprintDetailFragment.newInstance(sprint)
-        activity?.let {
-            it.supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, detailFragment)
-                .addToBackStack("detail_fragment")
-                .commit()
-        }
+        activity?.supportFragmentManager?.beginTransaction()?.
+            replace(R.id.fragment_container, detailFragment)?.
+            addToBackStack("detail_fragment")
+            ?.commit()
     }
 }

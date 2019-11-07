@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.pgaa.teamvelocity.R
@@ -25,7 +26,8 @@ class SprintAdapter internal constructor(context: Context, onClicklistener: OnSp
     override fun onBindViewHolder(holder: SprintViewHolder, position: Int) {
         val sprint =  sprintList[position]
         holder.sprintName.text =sprint.name
-        holder.itemView.setOnClickListener { listener.onSprintInteraction(sprint) }
+        holder.sprintName.setOnClickListener { listener.onSprintClick(sprint) }
+        holder.deleteButton.setOnClickListener { listener.onDeleteClick(sprint) }
     }
 
     internal fun setSprintList(sprintList: List<Sprint>) {
@@ -35,11 +37,13 @@ class SprintAdapter internal constructor(context: Context, onClicklistener: OnSp
 
     inner class SprintViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val sprintName: TextView = itemView.findViewById(R.id.sprint_name)
+        val deleteButton: ImageView = itemView.findViewById(R.id.imageView_delete)
     }
 
 }
 
 interface OnSprintInteractionListener {
     // TODO: Update argument type and name
-    fun onSprintInteraction(sprint: Sprint)
+    fun onSprintClick(sprint: Sprint)
+    fun onDeleteClick(sprint: Sprint)
 }

@@ -13,12 +13,12 @@ import kotlinx.coroutines.launch
 class SprintViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: SprintRepository
-    lateinit var allSprints: MutableLiveData<List<Sprint>>
+    var allSprints: MutableLiveData<List<Sprint>>
 
     init {
         val sprinData = SprintDatabase.getDatabase(application).sprintDao()
         repository = SprintRepository(sprinData)
-        allSprints = MutableLiveData<List<Sprint>>()
+        allSprints = MutableLiveData()
     }
 
     fun getAllSprint() {
@@ -30,5 +30,9 @@ class SprintViewModel(application: Application) : AndroidViewModel(application) 
 
     fun addSprint(sprint: Sprint) = viewModelScope.launch {
         repository.insertSprint(sprint)
+    }
+
+    fun deleteSprint(sprint: Sprint) = viewModelScope.launch {
+        repository.deleteSprint(sprint)
     }
 }
