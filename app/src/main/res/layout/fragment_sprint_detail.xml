@@ -27,21 +27,41 @@
             android:id="@+id/textView_quarter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="28dp"
             android:text="@string/quarter"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/textView_title"
             app:layout_constraintTop_toBottomOf="@+id/textView_title" />
 
         <TextView
-            android:id="@+id/textView_events"
+            android:id="@+id/textView_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="28dp"
             android:text="@string/description"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/textView_quarter"
             app:layout_constraintTop_toBottomOf="@+id/textView_quarter" />
+
+        <TextView
+            android:id="@+id/textView_storypoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/story_point"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_quarter"
+            app:layout_constraintTop_toBottomOf="@+id/textView_description" />
+
+        <TextView
+            android:id="@+id/textView_manday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/man_day"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView_quarter"
+            app:layout_constraintTop_toBottomOf="@+id/textView_storypoints" />
 
         <EditText
             android:id="@+id/editText_title"
@@ -72,8 +92,28 @@
             android:ems="10"
             android:inputType="numberDecimal"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_events"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_description"
             app:layout_constraintEnd_toEndOf="@+id/editText_querter" />
+
+        <EditText
+            android:id="@+id/editText_storypoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_storypoints"
+            app:layout_constraintEnd_toEndOf="@+id/editText_description" />
+
+        <EditText
+            android:id="@+id/editText_manday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_manday"
+            app:layout_constraintEnd_toEndOf="@+id/editText_storypoints" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +123,7 @@
             android:orientation="horizontal"
             android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_description"
+            app:layout_constraintTop_toBottomOf="@+id/editText_manday"
             tools:layout_editor_absoluteX="0dp">
 
             <Button

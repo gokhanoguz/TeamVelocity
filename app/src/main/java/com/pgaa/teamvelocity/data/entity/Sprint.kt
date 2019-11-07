@@ -13,5 +13,6 @@ data class Sprint (
     @ColumnInfo(name = "quarter") val quarter: String,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "story_points") val storyPoints: Int,
+    @ColumnInfo(name = "man_day") val mandDay: Int,
     @ColumnInfo(name = "ratio") val ratio: Double
 ) : Parcelable

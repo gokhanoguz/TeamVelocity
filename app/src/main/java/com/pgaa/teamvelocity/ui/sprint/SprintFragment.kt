@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pgaa.teamvelocity.R
 import com.pgaa.teamvelocity.data.entity.Sprint
 
@@ -24,23 +25,29 @@ class SprintFragment : Fragment(), OnSprintInteractionListener {
         sprintViewModel =
             ViewModelProviders.of(this).get(SprintViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_sprint, container, false)
-
-        sprintViewModel.allSprints?.observe(this, Observer {
-            //TODO:
-        })
+        val fab = root.findViewById<FloatingActionButton>(R.id.fab)
+        fab.setOnClickListener{startSprintDetailFragment(null)}
 
         val recyclerView = root.findViewById<RecyclerView>(R.id.sprint_recyclerview)
-        activity?.let {
-            val adapter = SprintAdapter(it, this)
-            recyclerView.adapter = adapter
-            recyclerView.layoutManager = LinearLayoutManager(it)
-            addSampleData(adapter)
-        }
 
+        activity?.let { activity ->
+            val adapter = SprintAdapter(activity, this)
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(activity)
+            sprintViewModel.allSprints?.observe(this, Observer { sprintList ->
+                adapter.setSprintList(sprintList)
+
+            })
+        }
+        sprintViewModel.getAllSprint()
         return root
     }
 
     override fun onSprintInteraction(sprint: Sprint) {
+        startSprintDetailFragment(sprint)
+    }
+
+    private fun startSprintDetailFragment(sprint: Sprint?) {
         val detailFragment = SprintDetailFragment.newInstance(sprint)
         activity?.let {
             it.supportFragmentManager.beginTransaction()
@@ -48,11 +55,5 @@ class SprintFragment : Fragment(), OnSprintInteractionListener {
                 .addToBackStack("detail_fragment")
                 .commit()
         }
-    }
-
-    private fun addSampleData(adapter: SprintAdapter) {
-        var dummySprint = Sprint("dummy sprint", "4", "", 50, 1.75)
-        var dummySprint2 = Sprint("dummy sprint2", "4", "", 50, 1.75)
-        adapter.setSprintList(listOf(dummySprint, dummySprint2))
     }
 }
