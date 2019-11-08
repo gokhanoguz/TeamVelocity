@@ -48,7 +48,12 @@ class SprintDetailFragment : Fragment() {
         descriptionEditText = view.findViewById(R.id.editText_description)
         storyPointEditText = view.findViewById(R.id.editText_storypoints)
         manDayEditText = view.findViewById(R.id.editText_manday)
+
         sprintNameEditText.setText(sprint?.name)
+        quarterditText.setText(sprint?.quarter)
+        descriptionEditText.setText(sprint?.description)
+        storyPointEditText.setText(sprint?.storyPoints?.toString())
+        manDayEditText.setText(sprint?.mandDay?.toString())
 
         var cancelButton = view.findViewById<Button>(R.id.button_cancel)
         cancelButton.setOnClickListener { activity?.supportFragmentManager?.popBackStack() }

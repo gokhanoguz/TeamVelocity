@@ -1,13 +1,27 @@
 package com.pgaa.teamvelocity.ui.dashboard
 
-import androidx.lifecycle.LiveData
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.pgaa.teamvelocity.data.entity.Sprint
+import com.pgaa.teamvelocity.data.local.SprintDatabase
+import com.pgaa.teamvelocity.data.repository.SprintRepository
+import kotlinx.coroutines.launch
 
-class DashboardViewModel : ViewModel() {
+class DashboardViewModel(application: Application) : AndroidViewModel(application) {
+    private val repository: SprintRepository
+    var allSprints: MutableLiveData<List<Sprint>>
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+    init {
+        val sprinData = SprintDatabase.getDatabase(application).sprintDao()
+        repository = SprintRepository(sprinData)
+        allSprints = MutableLiveData()
     }
-    val text: LiveData<String> = _text
+
+    fun getAllSprint() {
+        viewModelScope.launch {
+            allSprints.value = repository.getAllSprints()
+        }
+    }
 }

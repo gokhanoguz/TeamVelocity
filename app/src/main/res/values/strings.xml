@@ -13,4 +13,7 @@
     <string name="cancel">Cancel</string>
     <string name="man_day">*Man Day:</string>
     <string name="story_point">*Story Points:</string>
+    <string name="avarage_ratio">Avarage Ratio:</string>
+    <string name="avarage_story_points">Avarage Story Points:</string>
+    <string name="avarage_man_day">Avarage Man Day</string>
 </resources>
