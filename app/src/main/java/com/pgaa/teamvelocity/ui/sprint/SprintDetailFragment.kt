@@ -71,8 +71,8 @@ class SprintDetailFragment : Fragment() {
                 sprintNameEditText.text.toString(),
                 quarterditText.text.toString(),
                 descriptionEditText.text.toString(),
-                storyPointEditText.text.toString().toInt(),
-                manDayEditText.text.toString().toInt(),
+                storyPointEditText.text.toString().toDouble(),
+                manDayEditText.text.toString().toDouble(),
                 storyPointEditText.text.toString().toDouble() / manDayEditText.text.toString().toDouble()
             )
             sprintViewModel.addSprint(sprint)

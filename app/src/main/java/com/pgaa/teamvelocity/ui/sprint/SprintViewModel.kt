@@ -15,7 +15,7 @@ class SprintViewModel(application: Application) : AndroidViewModel(application) 
     var allSprints: MutableLiveData<List<Sprint>>
 
     init {
-        val sprinData = SprintDatabase.getDatabase(application).sprintDao()
+        val sprinData = SprintDatabase.getDatabase(application, viewModelScope).sprintDao()
         repository = SprintRepository(sprinData)
         allSprints = MutableLiveData()
     }

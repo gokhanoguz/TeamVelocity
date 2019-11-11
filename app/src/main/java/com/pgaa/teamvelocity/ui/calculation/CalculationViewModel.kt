@@ -18,7 +18,7 @@ class CalculationViewModel(application: Application) : AndroidViewModel(applicat
     var expectedStoryPoint: MutableLiveData<String>
 
     init {
-        val sprinData = SprintDatabase.getDatabase(application).sprintDao()
+        val sprinData = SprintDatabase.getDatabase(application, viewModelScope).sprintDao()
         repository = SprintRepository(sprinData)
         allSprints = MutableLiveData()
         expectedStoryPoint = MutableLiveData()
