@@ -15,5 +15,7 @@
     <string name="story_point">*Story Points:</string>
     <string name="avarage_ratio">Avarage Ratio:</string>
     <string name="avarage_story_points">Avarage Story Points:</string>
-    <string name="avarage_man_day">Avarage Man Day</string>
+    <string name="avarage_man_day">Avarage Man Day:</string>
+    <string name="expected_man_day">Expected Man Day?</string>
+    <string name="calculate">Calculate</string>
 </resources>
