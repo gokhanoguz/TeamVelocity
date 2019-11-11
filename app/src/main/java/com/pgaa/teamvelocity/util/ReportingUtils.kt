@@ -13,10 +13,8 @@ import com.pgaa.teamvelocity.data.model.SprintStats
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.Calendar
 import java.util.Date
 
 object ReportingUtils {
@@ -49,11 +47,11 @@ object ReportingUtils {
         paint.textSize = 18.0f
 
         y += 25
-        canvas.drawText("Avarage Ratio: ${sprintStats.avRatio}", x, y, paint)
+        canvas.drawText("Average Ratio: ${sprintStats.avRatio}", x, y, paint)
         y+=20
-        canvas.drawText("Avarage Story Points: ${sprintStats.avStoryPoints}", x, y, paint)
+        canvas.drawText("Average Story Points: ${sprintStats.avStoryPoints}", x, y, paint)
         y+=20
-        canvas.drawText("Avarage Man Day: ${sprintStats.avManDay}", x, y, paint)
+        canvas.drawText("Average Man Day: ${sprintStats.avManDay}", x, y, paint)
 
 
         paint.textSize = 15.0f

@@ -36,7 +36,7 @@ class CalculationFragment : Fragment() {
         calculateButton.setOnClickListener {
             if (expectedManDayEditText.text.isNullOrEmpty()) {
                 Toast.makeText(activity, "Enter Expected Man Day", Toast.LENGTH_SHORT).show()
-            } else if (sprintList == null) {
+            } else if (sprintList.isNullOrEmpty()) {
                 Toast.makeText(activity, "No Sprint is added", Toast.LENGTH_SHORT).show()
             } else {
                 calculationViewModel.calculateExpectedStoryPoint(expectedManDayEditText.text.toString(), sprintList!!)

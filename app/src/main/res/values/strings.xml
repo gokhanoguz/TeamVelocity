@@ -13,9 +13,9 @@
     <string name="cancel">Cancel</string>
     <string name="man_day">*Man Day:</string>
     <string name="story_point">*Story Points:</string>
-    <string name="avarage_ratio">Avarage Ratio:</string>
-    <string name="avarage_story_points">Avarage Story Points:</string>
-    <string name="avarage_man_day">Avarage Man Day:</string>
+    <string name="average_ratio">Average Ratio:</string>
+    <string name="average_story_points">Average Story Points:</string>
+    <string name="average_man_day">Average Man Day:</string>
     <string name="expected_man_day">Expected Man Day?</string>
     <string name="calculate">Calculate</string>
 </resources>
