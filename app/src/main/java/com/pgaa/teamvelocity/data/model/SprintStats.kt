@@ -1,3 +1,3 @@
 package com.pgaa.teamvelocity.data.model
 
-data class SprintStats (var avRatio : Double, var avStoryPoints: Double, var  avManDay: Double)
+data class SprintStats (var avRatio : String, var avStoryPoints: String, var  avManDay: String)

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -50,13 +51,15 @@ class DashboardFragment : Fragment() {
 
     private fun updateUI() {
         sprinStats?.let {
-            avRatioTextView.text = "%.2f".format(it.avRatio)
-            avStoryPointsTextView.text = "%.2f".format(it.avStoryPoints)
-            avManDayTextView.text = "%.2f".format(it.avManDay)
+            avRatioTextView.text = it.avRatio
+            avStoryPointsTextView.text = it.avStoryPoints
+            avManDayTextView.text = it.avManDay
         }
 
         if (activity != null && sprintList!= null && sprinStats!= null) {
             createReportButton.setOnClickListener { ReportingUtils.createFullReportPdf(activity!!, sprintList!!, sprinStats!!) }
+        } else {
+            Toast.makeText(activity, "No Sprint is added", Toast.LENGTH_SHORT).show()
         }
     }
 }

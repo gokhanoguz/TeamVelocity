@@ -17,6 +17,6 @@ object SprintUtils {
             avManDay /= sprintList.size
             avRatio = avStoryPoint/avManDay
         }
-        return SprintStats(avRatio, avStoryPoint, avManDay)
+        return SprintStats("%.2f".format(avRatio), "%.2f".format(avStoryPoint), "%.2f".format(avManDay))
     }
 }

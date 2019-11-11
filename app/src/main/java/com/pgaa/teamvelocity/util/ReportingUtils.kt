@@ -38,9 +38,34 @@ object ReportingUtils {
         var page = document.startPage(pageInfo)
         var canvas = page.canvas
         var paint = Paint()
+        var y = 20.0f
+        var x = 10.0f
 
         paint.color = Color.RED
-        canvas.drawText("Full Sprint Reports", 10.0f, 20.0f, paint)
+        paint.textSize = 20.0f
+        canvas.drawText("Sprint Report", x, y, paint)
+
+        paint.color = Color.BLACK
+        paint.textSize = 18.0f
+
+        y += 25
+        canvas.drawText("Avarage Ratio: ${sprintStats.avRatio}", x, y, paint)
+        y+=20
+        canvas.drawText("Avarage Story Points: ${sprintStats.avStoryPoints}", x, y, paint)
+        y+=20
+        canvas.drawText("Avarage Man Day: ${sprintStats.avManDay}", x, y, paint)
+
+
+        paint.textSize = 15.0f
+        paint.color = Color.GRAY
+        y+=25
+        canvas.drawText("Sprint Story Points & Man Days:", x, y, paint)
+
+        y+=18f
+        for(sprint in sprintList) {
+            canvas.drawText("${sprint.name} -> ${sprint.storyPoints} | ${sprint.mandDay}", 10.0f, y, paint)
+            y += 18f
+        }
 
         document.finishPage(page)
         writeDocumentToPdfFile(context, document, "FullSprintReport_${todaysDate()}.pdf")
