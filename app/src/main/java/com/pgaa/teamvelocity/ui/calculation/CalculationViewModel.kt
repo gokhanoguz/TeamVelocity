@@ -34,7 +34,14 @@ class CalculationViewModel(application: Application) : AndroidViewModel(applicat
         viewModelScope.launch {
             var ratio = SprintUtils.calculateSprintStats(sprintList).avRatio
 
-            expectedStoryPoint.value = "%.2f".format(ratio.toDouble() * expectedManDay.toDouble())
+            expectedStoryPoint.value = "%.1f".format(ratio.toDouble() * expectedManDay.toDouble())
         }
+    }
+
+    fun calculateExpectedStoryPoint(daysOfSprint: String, devCount: String, offManDay: String, sprintList: List<Sprint>) {
+
+        var expectedManDay = (daysOfSprint.toDouble() * devCount.toDouble()) - offManDay.toDouble()
+
+       calculateExpectedStoryPoint(expectedManDay.toString(), sprintList)
     }
 }

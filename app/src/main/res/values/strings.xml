@@ -16,6 +16,13 @@
     <string name="average_ratio">Average Ratio:</string>
     <string name="average_story_points">Average Story Points:</string>
     <string name="average_man_day">Average Man Day:</string>
-    <string name="expected_man_day">Expected Man Day?</string>
+    <string name="expected_man_day">Expected Man Day:</string>
     <string name="calculate">Calculate</string>
+    <string name="do_not_know_man_day">Do not know Man Day?</string>
+    <string name="dev_count">Dev Count:</string>
+    <string name="days_of_the_sprint">Days of the sprint:</string>
+    <string name="default_sprint_days">8.5</string>
+    <string name="off_man_day">Off Man Day:</string>
+    <string name="default_dev_count">6</string>
+    <string name="default_off_manday">0</string>
 </resources>
