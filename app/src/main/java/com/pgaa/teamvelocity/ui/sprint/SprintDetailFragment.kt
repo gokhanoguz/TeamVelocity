@@ -61,6 +61,7 @@ class SprintDetailFragment : Fragment() {
         var saveButton = view.findViewById<Button>(R.id.button_save)
         saveButton.setOnClickListener {
             saveSprint()
+            activity?.supportFragmentManager?.popBackStack()
         }
         return view
     }
@@ -76,7 +77,6 @@ class SprintDetailFragment : Fragment() {
                 storyPointEditText.text.toString().toDouble() / manDayEditText.text.toString().toDouble()
             )
             sprintViewModel.addSprint(sprint)
-            activity?.supportFragmentManager?.popBackStack()
         }
     }
 
