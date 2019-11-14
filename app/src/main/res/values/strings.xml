@@ -23,6 +23,6 @@
     <string name="days_of_the_sprint">Days of the sprint:</string>
     <string name="default_sprint_days">8.5</string>
     <string name="off_man_day">Off Man Day:</string>
-    <string name="default_dev_count">6</string>
+    <string name="default_dev_count">5</string>
     <string name="default_off_manday">0</string>
 </resources>
