@@ -57,11 +57,11 @@ object ReportingUtils {
         paint.textSize = 15.0f
         paint.color = Color.GRAY
         y+=25
-        canvas.drawText("Sprint Story Points & Man Days:", x, y, paint)
+        canvas.drawText("Sprint Story Points|Man Days|Ratio:", x, y, paint)
 
         y+=18f
         for(sprint in sprintList) {
-            canvas.drawText("${sprint.name} -> ${sprint.storyPoints} | ${sprint.mandDay}", 10.0f, y, paint)
+            canvas.drawText("${sprint.name} -> ${sprint.storyPoints} | ${sprint.mandDay} | ${sprint.ratio}", 10.0f, y, paint)
             y += 18f
         }
 
