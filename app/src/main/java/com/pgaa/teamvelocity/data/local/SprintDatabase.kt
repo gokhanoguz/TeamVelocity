@@ -58,6 +58,12 @@ abstract class SprintDatabase : RoomDatabase() {
                     sprint = Sprint("Q3Sprint7", "3", "", 71.0, 49.5, 1.43)
                     dao.insert(sprint)
 
+                    sprint = Sprint("Q3Sprint6", "3", "", 37.0, 35.5, 1.04)
+                    dao.insert(sprint)
+
+                    sprint = Sprint("Q3Sprint5", "3", "", 55.0, 42.0, 1.30)
+                    dao.insert(sprint)
+
                 }
             }
         }
