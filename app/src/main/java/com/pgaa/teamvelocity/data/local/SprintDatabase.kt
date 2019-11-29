@@ -52,6 +52,9 @@ abstract class SprintDatabase : RoomDatabase() {
                     var sprint = Sprint("Q4Sprint2", "4", "", 50.0, 35.5, 1.40)
                     dao.insert(sprint)
 
+                    sprint = Sprint("Q4Sprint3", "4", "", 62.0, 40.5, 1.53)
+                    dao.insert(sprint)
+
                     sprint = Sprint("Q4Sprint1", "4", "", 71.0, 48.0, 1.47)
                     dao.insert(sprint)
 
