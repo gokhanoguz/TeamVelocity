@@ -48,25 +48,15 @@ abstract class SprintDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch {
                     var dao = database.sprintDao()
+                    dao.insert(Sprint("Q3Sprint5", "3", "", 55.0, 42.0, 1.30))
+                    dao.insert(Sprint("Q3Sprint6", "3", "", 37.0, 35.5, 1.04))
+                    dao.insert(Sprint("Q3Sprint7", "3", "", 71.0, 49.5, 1.43))
 
-                    var sprint = Sprint("Q4Sprint2", "4", "", 50.0, 35.5, 1.40)
-                    dao.insert(sprint)
-
-                    sprint = Sprint("Q4Sprint3", "4", "", 62.0, 40.5, 1.53)
-                    dao.insert(sprint)
-
-                    sprint = Sprint("Q4Sprint1", "4", "", 71.0, 48.0, 1.47)
-                    dao.insert(sprint)
-
-                    sprint = Sprint("Q3Sprint7", "3", "", 71.0, 49.5, 1.43)
-                    dao.insert(sprint)
-
-                    sprint = Sprint("Q3Sprint6", "3", "", 37.0, 35.5, 1.04)
-                    dao.insert(sprint)
-
-                    sprint = Sprint("Q3Sprint5", "3", "", 55.0, 42.0, 1.30)
-                    dao.insert(sprint)
-
+                    dao.insert(Sprint("Q4Sprint1", "4", "", 71.0, 48.0, 1.47))
+                    dao.insert(Sprint("Q4Sprint2", "4", "", 50.0, 35.5, 1.40))
+                    dao.insert(Sprint("Q4Sprint3", "4", "", 62.0, 40.5, 1.53))
+                    dao.insert(Sprint("Q4Sprint4", "4", "", 60.0, 31.0, 1.93))
+                    dao.insert(Sprint("Q4Sprint5", "4", "", 63.0, 44.0, 1.43))
                 }
             }
         }
